@@ -4,21 +4,21 @@
             <text class="page_title">{{title}}
             </text>
         </view>
-        <image class="logo" src="/static/dangyuan.jpeg"></image>
+        <!-- <image class="logo" src="/static/dangyuan.jpeg"></image> -->
         <view>
             <uni-calendar :insert="true" :lunar="true" :start-date="'2019-3-2'" :end-date="'2019-5-20'" @change="change"></uni-calendar>
         </view>
-        <view>
+        <!-- <view>
             <text class="title">{{title}}
                 <text class="tltle2">你好啊啊</text>
             </text>
-        </view>
-        <view>
+        </view> -->
+        <!-- <view>
             <text v-for='(item, index) in list ' :key='index' class="title">{{item}}</text>
-        </view>
-        <button @click="pullDown">点击下拉刷新</button>
+        </view> -->
+        <!-- <button @click="pullDown">点击下拉刷新</button>
         <navigator open-type="switchTab" url="/pages/index/index">去首页</navigator>
-        <button @click="goMessage">去详情页</button>
+        <button @click="goMessage">去详情页</button> -->
         <view class="iconfont i_coupon"></view>
     </view>
 </template>
@@ -28,7 +28,7 @@ import uniCalendar from '@/components/uni-calendar_1.3.16/uni-calendar.vue';
 export default {
     data() {
         return {
-            title: '详情页面',
+            title: '日历页面',
             list: ['前端', '后端', '测试', '产品']
         }
     },

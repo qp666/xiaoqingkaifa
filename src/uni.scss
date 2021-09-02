@@ -74,3 +74,217 @@ $uni-color-subtitle: #555555; // 二级标题颜色
 $uni-font-size-subtitle:36rpx;
 $uni-color-paragraph: #3F536E; // 文章段落颜色
 $uni-font-size-paragraph:30rpx;
+
+
+//公共组件
+
+.mlos-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/*消除滚动条*/
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+
+
+/*盒子模型----------------------*/
+
+/*边框盒子*/
+.mlos-bsizing-bb {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.mlos-bsizing-cb {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -o-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+}
+
+
+
+.mlos-bgc-unset {
+    background-color: none;
+}
+
+
+// 杂乱样式
+.mlos-fw-n {
+    font-weight: normal;
+}
+
+.mlos-fw-b {
+    font-weight: bold;
+}
+
+.mlos-text-left {
+    text-align: left;
+}
+
+.mlos-text-right {
+    text-align: right;
+}
+
+.mlos-text-center {
+    text-align: center;
+}
+
+.mlos-text-underline {
+    text-decoration: underline;
+}
+
+.mlos-btn {
+    background: linear-gradient(45deg, rgba(63, 134, 255, 1) 0%, rgba(83, 88, 232, 1) 100%);
+    color: #fff;
+    font-weight: bold;
+}
+
+/*flex布局------------------------*/
+
+.mlos-flex-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+}
+
+.mlos-flex-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-end;
+}
+
+.mlos-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+}
+
+.mlos-flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: space-between;
+}
+
+.mlos-flex-around {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    display: -webkit-around;
+    -webkit-align-items: center;
+    -webkit-justify-content: space-around;
+}
+
+.mlos-flex {
+    display: flex;
+}
+
+.mlos-flex-wrap {
+    flex-flow: wrap;
+}
+
+.mlos-flex-vertical {
+    flex-direction: column;
+}
+
+
+//超出隐藏
+.mlos-e-line-1 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/*清除浮动*/
+.mlos-clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.mlos-clearfix {
+    zoom: 1;
+}
+
+// 定位相关
+.mlos-pos-rel {
+    position: relative;
+}
+
+.mlos-pos-abs {
+    position: absolute;
+}
+
+.mlos-pos-fixed {
+    position: fixed;
+}
+
+.mlos-pos-static {
+    position: static;
+}
+
+/**
+ * 0.5px的线
+ */
+.mlos-line-top,.mlos-line-bottom{
+	position: relative;
+}
+.mlos-line-bottom::before,.mlos-line-top::before{
+	content: "";
+	width: 100%;
+	height: 2rpx;
+	transform: scaleY(0.5);
+	background: #E1E1E1;
+	position: absolute;
+	left: 0;
+}
+.mlos-line-bottom::before{
+	bottom: 0;
+}
+.mlos-line-top::before{
+	top: 0;
+}
+
+// 黑色低白色字体公共按钮
+.fjz-btn{ 
+ width: 100%;
+ height: 88rpx;
+ background: #100503;
+ font-size: 32rpx;
+ font-weight: 500;
+ text-align: center;
+ color: #ffffff;
+ line-height: 88rpx;
+ margin: 0 auto ;
+ border-radius: 44rpx;
+}

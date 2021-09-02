@@ -8,7 +8,7 @@
             <order />
         </view>
         <view class="home_view" v-if="current === 2">
-            <gift  />
+            <gift />
         </view>
         <view class="home_view" v-if="current === 3">
             <my />
@@ -40,7 +40,7 @@ export default {
                 component: home,
             }, {
                 icon: 'iconfont tabbar_item_icon icon-quanbudingdan',
-                name: '订单',
+                name: '日历',
                 component: order,
             }, {
                 icon: 'iconfont tabbar_item_icon icon-xueshengqingjia',
@@ -72,6 +72,13 @@ export default {
             // wx.vibrateLong();
         }
     },
+    onShareAppMessage: function () {
+        return {
+            title: '小卿开发小程序',
+            desc: '最具人气的小程序开发联盟!',
+            path: '/pages/index/index'
+        }
+    },
     onShow() {
         console.log(this.navigationStyle);
     },
@@ -93,7 +100,7 @@ export default {
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    background-color: #fafafa;
+    background-color: #f8f9fc;
     .home_tabbar {
         height: 130rpx;
         width: 90%;

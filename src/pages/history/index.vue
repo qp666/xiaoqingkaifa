@@ -10,7 +10,7 @@
 export default {
     data() {
         return {
-            title: '历史页面'
+            title: '暂无购买历史'
         }
     },
     onLoad() {

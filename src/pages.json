@@ -26,7 +26,8 @@
 			"path": "pages/my/index",
 			"style": {
 				"navigationBarTitleText": "我的", //单页面标题
-				"navigationBarBackgroundColor": "#ff3f34"
+				"navigationBarBackgroundColor": "#ff3f34",
+				"navigationStyle": "custom"
 			}
 		},
 		{

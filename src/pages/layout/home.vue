@@ -3,10 +3,10 @@
         <view class="uni-padding-wrap">
             <view class="page-section swiper" :style="{height:imgheights}">
                 <view class="page-section-spacing">
-                    <swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
+                    <swiper class="swiper" :indicator-dots="indicatorDots" :circular="true" :autoplay="autoplay" :interval="interval" :duration="duration">
                         <swiper-item v-for='(item,index) in swiperImageList ' :key='index' class="banneritem">
                             <view class="banneritem_li swiper-item uni-bg-red">
-                                <image mode="aspectFill" :src="item" alt="">
+                                <image mode="scaleToFill" :src="item" alt="">
                             </view>
                         </swiper-item>
                         <!-- <swiper-item class="banneritem">
@@ -118,6 +118,13 @@ export default {
     created() {
         console.log('123123');
         // this.imageLoad();
+    },
+    onShareAppMessage: function () {
+        return {
+            title: '微信小程序联盟',
+            desc: '最具人气的小程序开发联盟!',
+            path: '/pages/index/index'
+        }
     },
     methods: {
         imageLoad() {
