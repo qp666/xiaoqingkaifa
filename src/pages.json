@@ -44,7 +44,11 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#ff3f34",
 		"backgroundColor": "#F8F8F8",
-		"enablePullDownRefresh": false //开启下拉
+		"enablePullDownRefresh": false, //开启下拉
+		"usingComponents": {
+			"van-button": "/wxcomponents/vant/dist/button/index",
+			"van-calendar": "wxcomponents/vant/dist/calendar/index"
+		}
 	},
 	"condition": {
 		"current": 0,

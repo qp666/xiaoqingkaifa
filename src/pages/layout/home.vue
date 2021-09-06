@@ -119,13 +119,7 @@ export default {
         console.log('123123');
         // this.imageLoad();
     },
-    onShareAppMessage: function () {
-        return {
-            title: '微信小程序联盟',
-            desc: '最具人气的小程序开发联盟!',
-            path: '/pages/index/index'
-        }
-    },
+   
     methods: {
         imageLoad() {
             // var that = this;

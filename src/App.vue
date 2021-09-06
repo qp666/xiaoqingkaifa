@@ -13,6 +13,7 @@ export default {
 </script>
 
 <style lang='scss'>
+@import "/wxcomponents/vant/dist/common/index.wxss";
 /*每个页面公共css */
 @import url("./static/fonts/iconfont.css");
 

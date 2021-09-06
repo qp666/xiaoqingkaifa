@@ -1,12 +1,13 @@
 <template>
-    <view class="content">
+    <view class="order_content">
         <view class="page_top">
             <text class="page_title">{{title}}
             </text>
         </view>
         <!-- <image class="logo" src="/static/dangyuan.jpeg"></image> -->
         <view>
-            <uni-calendar :insert="true" :lunar="true" :start-date="'2019-3-2'" :end-date="'2019-5-20'" @change="change"></uni-calendar>
+            <uni-calendar :insert="true" :lunar="true" :start-date="'1990-3-2'" :end-date="'2088-5-20'" @change="change"></uni-calendar>
+            <!-- <van-calendar  :poppable="false" :show-confirm="false" class="calendar" /> -->
         </view>
         <!-- <view>
             <text class="title">{{title}}
@@ -63,12 +64,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
+.order_content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
+    .calendar {
+        --calendar-height: 500px;
+    }
     .page_top {
         width: 100%;
         height: 180rpx;
