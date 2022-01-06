@@ -38,6 +38,27 @@
 				"enablePullDownRefresh": true
 			}
 		}
+		// {
+		// 	"path": "pages/myCanvas/index",
+		// 	"style": {
+		// 		"navigationBarTitleText": "我的海报", //单页面标题
+		// 		"navigationStyle": "custom"
+		// 	}
+		// },
+	],
+	"subpackages": [
+		{
+			"root": "canvas_pages",
+			"pages": [
+				{
+					"path": "myCanvas/index",
+					"style": {
+						"navigationBarTitleText": "我的海报", //单页面标题
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
@@ -47,7 +68,8 @@
 		"enablePullDownRefresh": false, //开启下拉
 		"usingComponents": {
 			"van-button": "/wxcomponents/vant/dist/button/index",
-			"van-calendar": "wxcomponents/vant/dist/calendar/index"
+			"van-calendar": "wxcomponents/vant/dist/calendar/index",
+			"van-cell": "wxcomponents/vant/dist/cell/index"
 		}
 	},
 	"condition": {

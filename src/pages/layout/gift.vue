@@ -1,26 +1,28 @@
 <template>
-    <view class="content">
-        <view class="page_top">
-        </view>
-        <view class="page_title">
-            <text class="title_left">礼品卡</text>
-            <view class="title_right">
-                <view class="item_text">
-                    <view class="iconfont icon-yiwancheng"></view>
-                    <text>我的礼品卡</text>
+    <scroll-view style="height:100%" @scroll="scroll" scroll-y="true">
+        <view class="content">
+            <view class="page_top">
+            </view>
+            <view class="page_title">
+                <text class="title_left">礼品卡</text>
+                <view class="title_right">
+                    <view @click="goCanvas" class="item_text">
+                        <view class="iconfont icon-yiwancheng"></view>
+                        <text>我的礼品卡</text>
+                    </view>
+                    <view @click="goHistory" class="item_text">
+                        <view class="iconfont icon-woyaofankui"></view>
+                        <text>购买历史</text>
+                    </view>
                 </view>
-                <view @click="goHistory" class="item_text">
-                    <view class="iconfont icon-woyaofankui"></view>
-                    <text>购买历史</text>
+            </view>
+            <view class="gift_main">
+                <view @click="imageClick" class="gift_item" v-for='(item,index) in imageList ' :key='index'>
+                    <image :src="item" mode="" />
                 </view>
             </view>
         </view>
-        <view class="gift_main">
-            <view @click="imageClick" class="gift_item" v-for='(item,index) in imageList ' :key='index'>
-                <image :src="item" mode="" />
-            </view>
-        </view>
-    </view>
+    </scroll-view>
 </template>
 
 <script>
@@ -38,10 +40,22 @@ export default {
             ]
         }
     },
+
     onLoad() {
 
     },
     methods: {
+        scroll: function (e) {
+            console.log(e)
+            // this.old.scrollTop = e.detail.scrollTop
+        },
+        goOnPageScroll(e) {
+            debugger
+            console.log(e);
+            // let that = this;
+            // console.log(e.scrollTop);
+            // that.showTopTitle = e.scrollTop > 180
+        },
         imageClick() {
             uni.showToast({
                 icon: 'none',
@@ -54,6 +68,13 @@ export default {
             console.log('购买历史');
             uni.navigateTo({
                 url: '/pages/history/index'
+            });
+        },
+        //前往历史页面
+        goCanvas() {
+            console.log('canvas页面');
+            uni.navigateTo({
+                url: '/canvas_pages/myCanvas/index'
             });
         }
     }

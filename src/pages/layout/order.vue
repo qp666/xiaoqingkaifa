@@ -20,7 +20,10 @@
         <!-- <button @click="pullDown">点击下拉刷新</button>
         <navigator open-type="switchTab" url="/pages/index/index">去首页</navigator>
         <button @click="goMessage">去详情页</button> -->
-        <view class="iconfont i_coupon"></view>
+        <view class="states">
+            <view>宜:<text style="color: #ffa801;font-size: 56rpx;font-weight: bold;">{{is_yi}}</text></view>
+            <view>忌:<text style="color: #ff3f34;font-size: 56rpx;font-weight: bold;">{{is_ji}}</text></view>
+        </view>
     </view>
 </template>
 
@@ -30,13 +33,27 @@ export default {
     data() {
         return {
             title: '日历页面',
-            list: ['前端', '后端', '测试', '产品']
+            list: ['前端', '后端', '测试', '产品'],
+            fulldate: '',
         }
     },
     onLoad() {
 
     },
-
+    computed: {
+        is_yi() {
+            let num = Math.floor(Math.random() * 10 + 1);
+            // let text = (this.fulldate && num % 2) ? '123' : '456';
+            let text = this.fulldate ? (num % 2 ? '吃饭' : '喝水') : '';
+            return text
+        },
+        is_ji() {
+            let num = Math.floor(Math.random() * 10 + 1);
+            // let text = (this.fulldate && num % 2) ? '123' : '456';
+            let text = this.fulldate ? (num % 2 ? '打架' : '出门') : '';
+            return text
+        },
+    },
     methods: {
         pullDown() {
             uni.startPullDownRefresh();
@@ -48,6 +65,7 @@ export default {
         },
         change(e) {
             console.log('change', e);
+            this.fulldate = e.fulldate;
         }
     },
     onPullDownRefresh() {
@@ -85,6 +103,13 @@ export default {
             // color: #fff;
             font-size: 37rpx;
         }
+    }
+    .states {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 20rpx;
     }
 }
 

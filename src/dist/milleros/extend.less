@@ -1,0 +1,292 @@
+// 引入基础文件
+@import url(./base.less);
+
+#app {
+    opacity: 0;
+    transition: all .3s;
+    transition-delay: .3s;
+}
+
+#app.on {
+    opacity: 1;
+}
+
+// 修改按钮默认二态度
+button::after {
+    display: none;
+    background-color: transparent;
+}
+
+button.button-hover {
+    opacity: .8;
+    // background-color: transparent;
+}
+
+body {
+    animation-name: fadeIn;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+}
+.page-navigation {
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    &.on {
+        background-color: #fff;
+
+        .navigation-header {
+            .page-title {
+                opacity: 1;
+            }
+        }
+    }
+
+    .navigation-header {
+        .size(100%, 100%);
+
+        .page-back {
+            .size(44);
+        }
+
+        .page-title {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+    }
+}
+.tpl-page-share {
+    .size(80);
+    bottom: 100/@base;
+    right: 40/@base;
+
+    .btn {
+        .size(100%);
+
+        .icon {
+            .size(45);
+        }
+    }
+}
+
+.mlos-min-width {
+    min-width: 1200/@base;
+}
+
+.mlos-max-width {
+    max-width: 1200/@base;
+}
+
+#exhibition-article-details {
+    .article-details {
+        line-height: 26/@base;
+
+        .p {
+            line-height: 40/@base;
+            color: #999999;
+        }
+
+        image {
+            border-radius: 12/@base;
+            margin-top: 32/@base;
+        }
+
+        video,
+        .video-video.video {
+            width: 100%;
+            height: 400/@base;
+        }
+    }
+}
+
+
+
+@-webkit-keyframes blink {
+    from {
+        left: 10/@base;
+    }
+
+    to {
+        left: 110/@base;
+    }
+}
+
+@-o-keyframes blink {
+    from {
+        left: 10/@base;
+    }
+
+    to {
+        left: 110/@base;
+    }
+}
+
+@-moz-keyframes blink {
+    from {
+        left: 10/@base;
+    }
+
+    to {
+        left: 110/@base;
+    }
+}
+
+@keyframes blink {
+    from {
+        left: -100/@base;
+    }
+
+    to {
+        left: 110/@base;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*默认无数据*/
+.mlos-data-none {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 28/@base;
+    color: #999;
+}
+
+/*灰色滤镜*/
+.mlos-grayscale {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+
+/*虚化滤镜*/
+.mlos-filterBlur {
+    -webkit-filter: blur(8/@base);
+    filter: blur(8/@base);
+}
+
+// 按钮全局点击hover效果
+.mlos-btn-hover {
+    opacity: 0.8;
+}
+
+.mlos-text-line-through {
+    text-decoration: line-through;
+}
+
+.mlos-text-line-under {
+    text-decoration: underline;
+}
+
+// 全局图片默认背景
+.mlos-img-bg {
+    background-color: #f8f8f8;
+}
+
+/* dev */
+.page-dev {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-size: 100% auto;
+    background-position: center -124/@base;
+    background-repeat: no-repeat;
+}
+
+@-webkit-keyframes scaleIt {
+    0% {
+        .size(600, 600);
+        opacity: 1;
+    }
+
+    70% {
+        .size(1500, 1500);
+        opacity: 1;
+    }
+
+    100% {
+        .size(1500, 1500);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes scaleIt {
+    0% {
+        .size(600, 600);
+        opacity: 1;
+    }
+
+    70% {
+        .size(1500, 1500);
+        opacity: 1;
+    }
+
+    100% {
+        .size(1500, 1500);
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes scaleIt {
+    0% {
+        .size(600, 600);
+        opacity: 1;
+    }
+
+    70% {
+        .size(1500, 1500);
+        opacity: 1;
+    }
+
+    100% {
+        .size(1500, 1500);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes scaleIt {
+    0% {
+        .size(600, 600);
+        opacity: 1;
+    }
+
+    70% {
+        .size(1500, 1500);
+        opacity: 1;
+    }
+
+    100% {
+        .size(1500, 1500);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleIt {
+    0% {
+        .size(600, 600);
+        opacity: 1;
+    }
+
+    70% {
+        .size(1500, 1500);
+        opacity: 1;
+    }
+
+    100% {
+        .size(1500, 1500);
+        opacity: 0;
+    }
+}

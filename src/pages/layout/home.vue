@@ -1,5 +1,7 @@
 <template>
     <view class="content">
+
+        <van-toast id="van-toast" />
         <view class="uni-padding-wrap">
             <view class="page-section swiper" :style="{height:imgheights}">
                 <view class="page-section-spacing">
@@ -26,8 +28,8 @@
         <view class="middle_content">
             <view v-for='(item,index) in middleList ' :key='index' class="delivery_item">
                 <image :src="item.image" alt="">
-                    <text class="delivery_item_names">{{item.names}}</text>
-                    <text class="delivery_item_name">{{item.name}}</text>
+                    <!-- <text class="delivery_item_names">{{item.names}}</text>
+                    <text class="delivery_item_name">{{item.name}}</text> -->
             </view>
         </view>
 
@@ -54,36 +56,52 @@
 </template>
 
 <script>
+
 export default {
+    components: {
+    },
     data() {
         return {
             title: '首页',
             swiperImageList: [
-                'https://uploadstatic.mihoyo.com/contentweb/20210616/2021061612200040357.jpg',
-                'https://uploadstatic.mihoyo.com/contentweb/20210616/2021061612185745407.jpg',
-                'https://uploadstatic.mihoyo.com/contentweb/20210603/2021060312070518742.jpg',
-                'https://uploadstatic.mihoyo.com/contentweb/20210608/2021060812353785357.jpg'
+                'https://ossweb-img.qq.com/upload/adw/image/977/20210903/9688cce25a8b7d414afb95a9fb5998c6.jpeg',
+                'https://ossweb-img.qq.com/upload/adw/image/20210830/972494aaa891de13e83cfa6c299e3165.jpeg',
+                'https://ossweb-img.qq.com/upload/adw/image/977/20210903/7f1088e063505bfcf01a0a9415bf1f44.jpeg',
+                'https://ossweb-img.qq.com/upload/adw/image/20210827/3dd1f13cbcccf4d4b3b1812b3a810e65.jpeg',
+                'https://img.crawler.qq.com/lolwebschool/0/JAutoCMS_LOLWeb_66ebce2530ea2800397936b6e3c00b91/0',
+                // 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2020-11-13%2F5fae23dc73f31.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1633570316&t=230bca4596dc95d7ab52d1f0bc895843',
+                // 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic_source%2F55%2Fb0%2F3a%2F55b03a586734f099b2e988fc344403af.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1633570316&t=733a8f371c1c69f2a27a46ff20e93435'
+                // 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.soumeitu.com%2Fwp-content%2Fuploads%2F2020%2F07%2F5f053d0bb5cc9.jpg&refer=http%3A%2F%2Fwww.soumeitu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1633570316&t=a36a8a52431712020167c0bb50955f75',
+                // 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.soumeitu.com%2Fwp-content%2Fuploads%2F2020%2F07%2F5f179e9eba4c3.jpg&refer=http%3A%2F%2Fwww.soumeitu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1633570316&t=cd8f0e27497f34f65a30d2aed9faad34',
+                // 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2020-11-13%2F5fae23dc73f31.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1633570316&t=230bca4596dc95d7ab52d1f0bc895843',
+                // 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic_source%2F55%2Fb0%2F3a%2F55b03a586734f099b2e988fc344403af.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1633570316&t=733a8f371c1c69f2a27a46ff20e93435'
+
+                // --------
+                // 'https://uploadstatic.mihoyo.com/contentweb/20210616/2021061612200040357.jpg',
+                // 'https://uploadstatic.mihoyo.com/contentweb/20210616/2021061612185745407.jpg',
+                // 'https://uploadstatic.mihoyo.com/contentweb/20210603/2021060312070518742.jpg',
+                // 'https://uploadstatic.mihoyo.com/contentweb/20210608/2021060812353785357.jpg'
             ],
             background: ['color1', 'color2', 'color3'],
             indicatorDots: true,
             autoplay: true,
             interval: 2000,
             duration: 500,
-            imgheights: '720rpx',
+            imgheights: '520rpx',
             middleList: [{
-                image: 'https://uploadstatic.mihoyo.com/contentweb/20200306/2020030617005720579.png',
-                name: '开 发 工 具',
-                names: '极客开发工具'
+                image: 'https://game.gtimg.cn/images/lol/act/img/champion/Ryze.png',
+                name: '瑞 兹',
+                names: '符文法师'
             },
             {
-                image: 'https://uploadstatic.mihoyo.com/contentweb/20200306/2020030617035787693.png',
-                name: '开 发 服 务',
-                names: 'js开发服务端'
+                image: 'https://game.gtimg.cn/images/lol/act/img/champion/Teemo.png',
+                name: '提 莫',
+                names: '迅捷斥候'
             },
             {
-                image: 'https://uploadstatic.mihoyo.com/contentweb/20200306/2020030617042023125.png',
-                name: '小 程 序',
-                names: 'App小程序'
+                image: 'https://game.gtimg.cn/images/lol/act/img/champion/Ashe.png',
+                name: '艾 希',
+                names: '寒冰射手'
             }],
             moneyList: [{
                 name: '储值余额',
@@ -117,9 +135,10 @@ export default {
     },
     created() {
         console.log('123123');
+
         // this.imageLoad();
     },
-   
+
     methods: {
         imageLoad() {
             // var that = this;
@@ -139,17 +158,19 @@ export default {
         },
         btnClick(index) {
             if (index === 0) {
-                uni.showToast({
-                    icon: 'none',
-                    title: '暂未提供充值',
-                    duration: 2000
-                });
+                this.$toast('暂未提供充值~');
+                // uni.showToast({
+                //     icon: 'none',
+                //     title: '暂未提供充值',
+                //     duration: 2000
+                // });
             } else {
-                uni.showToast({
-                    icon: 'none',
-                    title: '想兑换啥?想的美',
-                    duration: 2000
-                });
+                this.$toast('想兑换啥?想的美');
+                // uni.showToast({
+                //     icon: 'none',
+                //     title: '想兑换啥?想的美',
+                //     duration: 2000
+                // });
             }
 
         }
@@ -158,7 +179,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 .content {
     display: flex;
     flex-direction: column;
@@ -222,8 +243,10 @@ export default {
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
             0 6px 20px 0 rgba(0, 0, 0, -0.81);
         image {
-            width: 100rpx;
-            height: 100rpx;
+            // width: 100rpx;
+            // height: 100rpx;
+            width: 100%;
+            height: 100%;
         }
         .delivery_item_names {
             font-size: 18rpx;

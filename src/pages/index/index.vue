@@ -60,6 +60,12 @@ export default {
         gift,
         my
     },
+    onPageScroll(e) {
+        // debugger
+        let that = this;
+        console.log(e.scrollTop);
+        // that.showTopTitle = e.scrollTop > 180
+    },
     methods: {
         tabBarClick(i) {
             console.log('当前点击的是:', i);
@@ -101,6 +107,8 @@ export default {
     height: 100%;
     overflow-y: auto;
     background-color: #f8f9fc;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
     .home_tabbar {
         height: 130rpx;
         width: 90%;
@@ -110,7 +118,7 @@ export default {
         position: absolute;
         border-radius: 70rpx;
         left: 50%;
-        bottom: 5%;
+        bottom: 3%;
         transform: translate(-50%, 0%);
 
         display: flex;

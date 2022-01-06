@@ -1,7 +1,7 @@
 <template>
     <view class="content">
         <image class="logo" src="/static/dangyuan.jpeg"></image>
-        <view>
+        <!-- <view>
             <uni-calendar :insert="true" :lunar="true" :start-date="'2019-3-2'" :end-date="'2019-5-20'" @change="change"></uni-calendar>
         </view>
         <view>
@@ -15,7 +15,7 @@
         <button @click="pullDown">点击下拉刷新</button>
         <navigator open-type="switchTab" url="/pages/index/index">去首页</navigator>
         <button @click="goMessage">去详情页</button>
-        <view class="iconfont i_coupon"></view>
+        <view class="iconfont i_coupon"></view> -->
     </view>
 </template>
 
