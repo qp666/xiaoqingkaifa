@@ -194,6 +194,13 @@ export default {
             url: `/pages/index/index`,
         })
     },
+    onShareAppMessage: function () {
+        return {
+            title: '全知全能',
+            desc: '不管任何问题都可以得到答案!',
+            path: '/pages/baidu/index'
+        }
+    },
     components: {
         uniCalendar
     }
